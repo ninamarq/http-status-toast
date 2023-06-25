@@ -5,3 +5,9 @@ export interface IStatusCode {
 }
 
 export type TStatusCode = 'success' | 'client_error' | 'server_error'
+
+export enum EStatusTheme {
+  SUCCESS = 'success',
+  CLIENT_ERROR = 'client_error',
+  SERVER_ERROR = 'server_error',
+}

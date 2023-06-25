@@ -1,17 +1,39 @@
 import { styled } from 'styled-components';
 import { IThemeProps } from '../../types';
 
-const ToastStyle = styled.div<IThemeProps>`
-  display: flex;
+interface IToastProps extends IThemeProps {
+  position: 'right' | 'left'
+  display: boolean
+}
+
+const ToastContainer = styled.div<IToastProps>`
+  display: ${(props) => props.display ? 'flex' : 'none'};
+  box-sizing: border-box;
+  background: ${props => ToastContainer.defaultProps.theme[props.theme]};
+  border-radius: 6px;
   flex-direction: column;
-  color: 'red';
-  width: 500px;
-  height: 200px;
-  background: ${props => ToastStyle.defaultProps.theme[props.theme]};
-  border: 1px solid ${props => ToastStyle.defaultProps.theme[props.theme]};
+  color: #F0EFFB;
+  padding: 8px;
+  z-index: 3;
+  -webkit-transform: translate3d(0, 0, 3);
+  position: fixed;
+  top: 5%;
+  right: ${props => props.position === 'right' && '5%'};
+  left: ${props => props.position === 'left' && '5%'};
+  width: 35%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 `;
 
-ToastStyle.defaultProps = {
+const CloseButton = styled.div`
+  align-self: flex-end;
+  cursor: pointer;
+  &:hover {
+    transition: .5s;
+    opacity: 70%;
+  }
+`;
+
+ToastContainer.defaultProps = {
 	theme: {
 		success: '#7FB069',
 		client_error: '#FF3C38',
@@ -19,4 +41,4 @@ ToastStyle.defaultProps = {
 	}
 };
 
-export default ToastStyle;
+export const styles = { ToastContainer, CloseButton };

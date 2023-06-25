@@ -1,22 +1,38 @@
 import React, { useMemo, useState } from 'react';
-import ToastStyle from './styles';
+import { styles as s } from './styles';
 import { getThemeByStatusCode } from '../../utils';
-import { TTheme } from '../../types';
+import { EStatusTheme } from '../../types';
+import { IoClose } from 'react-icons/io5';
 
 interface IToastProps {
 	status: string | number
+	position?: 'right' | 'left'
+	duration?: string | number
 }
 
 export const Toast = (props: IToastProps) => {
-	const [toastTheme, setToastTheme] = useState<TTheme>('success');
+	const [toastTheme, setToastTheme] = useState<EStatusTheme>(EStatusTheme.SUCCESS);
+	const [displayToast, setDisplayToast] = useState<boolean>(true);
 
 	useMemo(() => {
 		setToastTheme(getThemeByStatusCode(props.status));
 	}, [props.status]);
 
+	setTimeout(() => {
+		setDisplayToast(false);
+	}, Number(props.duration) || 7000);
+
 	return (
-		<ToastStyle theme={toastTheme}>
+		<s.ToastContainer theme={toastTheme} position={props.position || 'right'} display={displayToast}>
+			<s.CloseButton>
+				<IoClose onClick={() => setDisplayToast(false)}/>
+			</s.CloseButton>
 			opaaaaaaaaaaaa
-		</ToastStyle>
+			opaaaaaaaaaaaa
+			opaaaaaaaaaaaa
+			opaaaaaaaaaaaa
+			opaaaaaaaaaaaa
+			opaaaaaaaaaaaa
+		</s.ToastContainer>
 	);
 };

@@ -1,3 +1,5 @@
+import { EStatusTheme } from '../types';
+
 const getThemeByStatusCode = (status: string | number): EStatusTheme => {
 	const statusType = new Map<number, EStatusTheme>([
 		[200, EStatusTheme.SUCCESS],
@@ -24,11 +26,5 @@ const getThemeByStatusCode = (status: string | number): EStatusTheme => {
 
 	throw new Error('Invalid status code');
 };
-
-enum EStatusTheme {
-  SUCCESS = 'success',
-  CLIENT_ERROR = 'client_error',
-  SERVER_ERROR = 'server_error',
-}
 
 export default getThemeByStatusCode;
