@@ -32,6 +32,7 @@ module.exports = {
 	],
 	'rules': {
 		'object-curly-spacing': ['error', 'always'],
+		'eol-last': ['error', 'always'],
 		'indent': [
 			'error',
 			'tab'

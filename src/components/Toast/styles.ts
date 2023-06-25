@@ -1,10 +1,5 @@
 import { styled } from 'styled-components';
-
-export interface IThemeProps {
-  theme: TTheme
-}
-
-export type TTheme = 'success' | 'client_error' | 'server_error'
+import { IThemeProps } from '../../types';
 
 const ToastStyle = styled.div<IThemeProps>`
   display: flex;
