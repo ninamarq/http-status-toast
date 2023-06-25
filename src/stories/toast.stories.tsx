@@ -1,10 +1,17 @@
-import { Meta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
+
 import { Toast } from '../components';
-import React from 'react';
 
-export default {
-	title: 'Toast testing',
+const meta: Meta<typeof Toast> = {
 	component: Toast,
-} as Meta;
+};
 
-export const Default = () => <Toast />;
+export default meta;
+type Story = StoryObj<typeof Toast>;
+
+//👇 Throws a type error it the args don't match the component props
+export const Primary: Story = {
+	args: {
+		primary: true,
+	},
+};
