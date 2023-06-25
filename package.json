@@ -48,6 +48,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "styled-components": "^6.0.0-rc.6",
     "typescript-eslint": "^0.0.1-alpha.0"
   }
 }
