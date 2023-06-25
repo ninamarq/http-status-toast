@@ -20,17 +20,34 @@ const ToastContainer = styled.div<IToastProps>`
   top: 5%;
   right: ${props => props.position === 'right' && '5%'};
   left: ${props => props.position === 'left' && '5%'};
-  width: 35%;
+  width: 30%;
+  min-width: 150px;
+  max-width: 500px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 `;
 
+const ToastHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: default
+`;
+
 const CloseButton = styled.div`
-  align-self: flex-end;
   cursor: pointer;
   &:hover {
     transition: .5s;
     opacity: 70%;
-  }
+  };
+`;
+
+const MessageContainer = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  padding: 12px 4px;
+
 `;
 
 ToastContainer.defaultProps = {
@@ -41,4 +58,4 @@ ToastContainer.defaultProps = {
 	}
 };
 
-export const styles = { ToastContainer, CloseButton };
+export const styles = { ToastContainer, CloseButton, MessageContainer, ToastHeader };
