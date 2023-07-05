@@ -18,8 +18,8 @@ const ToastContainer = styled.div<IToastProps>`
   -webkit-transform: translate3d(0, 0, 3);
   position: fixed;
   top: 5%;
-  right: ${props => props.position === 'right' && '5%'};
-  left: ${props => props.position === 'left' && '5%'};
+  right: ${props => props.position === 'right' && '3.5%'};
+  left: ${props => props.position === 'left' && '3.5%'};
   width: 30%;
   min-width: 150px;
   max-width: 500px;

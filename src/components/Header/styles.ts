@@ -5,7 +5,7 @@ const ToastHeader = styled.header`
   justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
-  cursor: default
+  cursor: default;
 `;
 
 const CloseButton = styled.div`
