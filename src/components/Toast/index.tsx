@@ -1,11 +1,12 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { styles as s } from './styles';
-import { getThemeByStatusCode, getThemeIcon } from '../../utils';
-import { EStatusTheme } from '../../types';
+import { getThemeByStatusCode, getThemeIcon, getMessagesByTheme } from '../../utils';
+import { EStatusTheme, TLang } from '../../types';
 import { IoClose } from 'react-icons/io5';
 
 interface IToastProps {
 	status: string | number
+	lang: TLang
 	position?: 'right' | 'left'
 	duration?: string | number
 	message?: string
@@ -19,8 +20,9 @@ export const Toast = (props: IToastProps) => {
 		if(props.message) {
 			return props.message;
 		}
-		return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-	}, [props.message]);
+
+		return getMessagesByTheme(toastTheme, props.lang);
+	}, [toastTheme, props.message, props.lang]);
 
 	useMemo(() => {
 		setToastTheme(getThemeByStatusCode(props.status));
@@ -33,7 +35,7 @@ export const Toast = (props: IToastProps) => {
 	return (
 		<s.ToastContainer theme={toastTheme} position={props.position || 'right'} display={displayToast}>
 			<s.ToastHeader>
-				{getThemeIcon(toastTheme)}
+				{getThemeIcon(toastTheme, props.lang)}
 				<s.CloseButton>
 					<IoClose onClick={() => setDisplayToast(false)}/>
 				</s.CloseButton>

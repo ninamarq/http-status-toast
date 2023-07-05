@@ -23,8 +23,8 @@ const getThemeByStatusCode = (status: string | number): EStatusTheme => {
 			return theme;
 		}
 	}
-
-	throw new Error('Invalid status code');
+	
+	return EStatusTheme.UNKNOWN;
 };
 
 export default getThemeByStatusCode;

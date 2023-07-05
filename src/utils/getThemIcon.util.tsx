@@ -2,10 +2,11 @@ import React from 'react';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { BiSolidErrorAlt } from 'react-icons/bi';
 import { LuServerOff } from 'react-icons/lu';
-import { TTheme } from '../types';
+import { EStatusTheme, TLang } from '../types';
 import { styled } from 'styled-components';
+import getToastTitleByTheme from './getToastTitleByTheme.util';
 
-const getThemeIcon = (theme: TTheme) => {
+const getThemeIcon = (theme: EStatusTheme, lang?: TLang) => {
 	const themeIcons = {
 		success: <AiFillCheckCircle />,
 		client_error: <BiSolidErrorAlt />,
@@ -22,7 +23,7 @@ const getThemeIcon = (theme: TTheme) => {
 	return (
 		<ThemeIconContainer>
 			{themeIcons[theme]}
-			{theme}
+			{getToastTitleByTheme(theme, lang)}
 		</ThemeIconContainer>
 	);
 };

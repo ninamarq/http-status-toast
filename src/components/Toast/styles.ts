@@ -47,7 +47,6 @@ const MessageContainer = styled.div`
   flex-wrap: nowrap;
   box-sizing: border-box;
   padding: 12px 4px;
-
 `;
 
 ToastContainer.defaultProps = {
@@ -55,6 +54,7 @@ ToastContainer.defaultProps = {
 		success: '#7FB069',
 		client_error: '#FF3C38',
 		server_error: '#FF8C42',
+		unknown: '#76949F'
 	}
 };
 
