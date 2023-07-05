@@ -11,6 +11,7 @@ interface IToastProps {
 	position?: 'right' | 'left'
 	duration?: string | number
 	message?: string
+	customStyle?: React.CSSProperties
 }
 
 export const Toast = (props: IToastProps) => {
@@ -30,6 +31,7 @@ export const Toast = (props: IToastProps) => {
 			theme={toastTheme}
 			position={props.position || 'right'}
 			display={displayToast}
+			style={props.customStyle}
 		>
 			<Header
 				currentTheme={toastTheme}
