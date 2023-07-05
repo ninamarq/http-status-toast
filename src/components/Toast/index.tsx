@@ -1,8 +1,9 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { styles as s } from './styles';
-import { getThemeByStatusCode, getMessagesByTheme } from '../../utils';
+import { getThemeByStatusCode } from '../../utils';
 import { EStatusTheme, TLang } from '../../types';
 import { Header } from '../Header';
+import { ToastMessage } from '../ToastMessage';
 
 interface IToastProps {
 	status: string | number
@@ -15,14 +16,6 @@ interface IToastProps {
 export const Toast = (props: IToastProps) => {
 	const [toastTheme, setToastTheme] = useState<EStatusTheme>(EStatusTheme.SUCCESS);
 	const [displayToast, setDisplayToast] = useState<boolean>(true);
-
-	const messageToRender = useCallback(() => {
-		if(props.message) {
-			return props.message;
-		}
-
-		return getMessagesByTheme(toastTheme, props.lang);
-	}, [toastTheme, props.message, props.lang]);
 
 	useMemo(() => {
 		setToastTheme(getThemeByStatusCode(props.status));
@@ -43,9 +36,11 @@ export const Toast = (props: IToastProps) => {
 				currentLang={props.lang}
 				handleDisplayToast={setDisplayToast}
 			/>
-			<s.MessageContainer>
-				{messageToRender()}
-			</s.MessageContainer>
+			<ToastMessage
+				currentMessage={props.message}
+				currentTheme={toastTheme}
+				currentLang={props.lang}
+			/>
 		</s.ToastContainer>
 	);
 };

@@ -26,29 +26,6 @@ const ToastContainer = styled.div<IToastProps>`
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 `;
 
-const ToastHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 100%;
-  cursor: default
-`;
-
-const CloseButton = styled.div`
-  cursor: pointer;
-  &:hover {
-    transition: .5s;
-    opacity: 70%;
-  };
-`;
-
-const MessageContainer = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
-  padding: 12px 4px;
-`;
-
 ToastContainer.defaultProps = {
 	theme: {
 		success: '#7FB069',
@@ -58,4 +35,4 @@ ToastContainer.defaultProps = {
 	}
 };
 
-export const styles = { ToastContainer, CloseButton, MessageContainer, ToastHeader };
+export const styles = { ToastContainer };
