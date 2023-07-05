@@ -12,6 +12,10 @@ type Story = StoryObj<typeof Toast>;
 //👇 Throws a type error it the args don't match the component props
 export const Primary: Story = {
 	args: {
-		primary: true,
+		status: '204',
+		position: 'right',
+		duration: '5000',
+		message: '',
+		lang: 'pt'
 	},
 };
