@@ -1,8 +1,9 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { styles as s } from './styles';
-import { getThemeByStatusCode, getThemeIcon, getMessagesByTheme } from '../../utils';
+import { getThemeByStatusCode } from '../../utils';
 import { EStatusTheme, TLang } from '../../types';
-import { IoClose } from 'react-icons/io5';
+import { Header } from '../Header';
+import { ToastMessage } from '../ToastMessage';
 
 interface IToastProps {
 	status: string | number
@@ -10,19 +11,12 @@ interface IToastProps {
 	position?: 'right' | 'left'
 	duration?: string | number
 	message?: string
+	customStyle?: React.CSSProperties
 }
 
 export const Toast = (props: IToastProps) => {
 	const [toastTheme, setToastTheme] = useState<EStatusTheme>(EStatusTheme.SUCCESS);
 	const [displayToast, setDisplayToast] = useState<boolean>(true);
-
-	const messageToRender = useCallback(() => {
-		if(props.message) {
-			return props.message;
-		}
-
-		return getMessagesByTheme(toastTheme, props.lang);
-	}, [toastTheme, props.message, props.lang]);
 
 	useMemo(() => {
 		setToastTheme(getThemeByStatusCode(props.status));
@@ -33,16 +27,22 @@ export const Toast = (props: IToastProps) => {
 	}, Number(props.duration) || 7000);
 
 	return (
-		<s.ToastContainer theme={toastTheme} position={props.position || 'right'} display={displayToast}>
-			<s.ToastHeader>
-				{getThemeIcon(toastTheme, props.lang)}
-				<s.CloseButton>
-					<IoClose onClick={() => setDisplayToast(false)}/>
-				</s.CloseButton>
-			</s.ToastHeader>
-			<s.MessageContainer>
-				{messageToRender()}
-			</s.MessageContainer>
+		<s.ToastContainer
+			theme={toastTheme}
+			position={props.position || 'right'}
+			display={displayToast}
+			style={props.customStyle}
+		>
+			<Header
+				currentTheme={toastTheme}
+				currentLang={props.lang}
+				handleDisplayToast={setDisplayToast}
+			/>
+			<ToastMessage
+				currentMessage={props.message}
+				currentTheme={toastTheme}
+				currentLang={props.lang}
+			/>
 		</s.ToastContainer>
 	);
 };

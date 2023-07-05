@@ -19,8 +19,8 @@ const getMessagesByTheme = (theme: EStatusTheme, lang?: TLang) => {
 		},
 		[EStatusTheme.UNKNOWN]: {
 			pt: 'Retorno desconhecido para darmos alguma especificação!',
-			en: '¡Respuesta desconocida para especificaciones!',
-			es: 'Unknown response for specifications!'
+			es: '¡Respuesta desconocida para especificaciones!',
+			en: 'Unknown response for specifications!'
 		}
 	};
 

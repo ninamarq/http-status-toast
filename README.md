@@ -25,9 +25,9 @@ Follow this example:
 And inside of it, your description of the suggestion/issue.
 
 Thank you 🚀✨
-## Instalation
+## Installation
 
-Instale `http-status-toast` com npm
+Install `http-status-toast` using npm
 
 ```bash
   npm install http-status-toast
@@ -46,6 +46,26 @@ fetch(URL)
 
 Above we have a simple call of the lib function, that will call a notification with a simple message and a simple toast with its theme according to the status passed by params.
 
+### **Default examples by status**
+
+Here we will have some examples of the simplest use of this function, passing just the status and the english lang to the function.
+
+- When the status passed it fits successfull request:
+
+<img src="src/assets/success_status.png" width="500px" />
+
+- When the status passed it fits client error request:
+
+<img src="src/assets/client_error_status.png" width="500px" />
+
+- When the status passed it fits server error request:
+
+<img src="src/assets/server_error_status.png" width="500px" />
+
+- When the status passed it fits unknown type of request:
+
+<img src="src/assets/unknown_status.png" width="500px" />
+
 But if you want to customize more and more, we have some optionals uses for this function.
 
 You can costume:
@@ -54,6 +74,10 @@ You can costume:
 - Language by `lang` params, for now we have just for portuguese ("pt"), spanish ("es") and english ("en")
 - Toast duration by `duration` params, passing milisseconds value
 - Custom message by `message` params, passing a string
+
+## Storybook controls visualization
+
+<img src="src/assets/storybook_controls_params.png" />
 
 Examples of uses:
 
@@ -120,6 +144,9 @@ fetch(URL)
         message: response.data.message || "Try again in 10 minutes",
     }))
 ```
+And that's it! ❤️
+<hr/>
 
+### Thank you for using my first lib, and thank you for reading till here!
 
 ## Created by me [@ninamarq](https://www.github.com/ninamarq) 🚀✨

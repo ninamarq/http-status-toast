@@ -16,6 +16,7 @@ export const Primary: Story = {
 		position: 'right',
 		duration: '5000',
 		message: '',
-		lang: 'pt'
+		lang: 'pt',
+		customStyle: {}
 	},
 };

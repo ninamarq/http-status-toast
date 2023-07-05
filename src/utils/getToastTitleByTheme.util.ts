@@ -3,7 +3,7 @@ import { EStatusTheme, TLang } from '../types';
 const getToastTitleByTheme = (theme: EStatusTheme, lang?: TLang) => {
 	const title = {
 		[EStatusTheme.SUCCESS]: {
-			en: 'Sucess',
+			en: 'Success',
 			es: 'Éxito',
 			pt: 'Sucesso'
 		},
@@ -19,8 +19,8 @@ const getToastTitleByTheme = (theme: EStatusTheme, lang?: TLang) => {
 		},
 		[EStatusTheme.UNKNOWN]: {
 			pt: 'Status desconhecido',
-			en: 'Status desconocido',
-			es: 'Unknown status'
+			es: 'Status desconocido',
+			en: 'Unknown status'
 		}
 	};
 
