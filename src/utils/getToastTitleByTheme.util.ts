@@ -19,8 +19,8 @@ const getToastTitleByTheme = (theme: EStatusTheme, lang?: TLang) => {
 		},
 		[EStatusTheme.UNKNOWN]: {
 			pt: 'Status desconhecido',
-			en: 'Status desconocido',
-			es: 'Unknown status'
+			es: 'Status desconocido',
+			en: 'Unknown status'
 		}
 	};
 
