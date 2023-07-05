@@ -18,6 +18,8 @@ const ToastContainer = styled.div<IToastProps>`
   background: ${props => ToastContainer.defaultProps.theme[props.theme]};
   border-radius: 6px;
   flex-direction: column;
+  font-family: Fira code;
+  font-size: 12px;
   color: #F0EFFB;
   padding: 8px;
   z-index: 3;
