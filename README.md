@@ -90,7 +90,7 @@ fetch(URL)
     .finally((response) => httpStatusToast({
         status: response.status,
         lang: 'en',
-        style: { "font-family": "Times new Roman", "color": "red" }
+        customStyle: { "font-family": "Times new Roman", "color": "red" }
     }))
 ```
 
