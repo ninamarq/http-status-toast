@@ -1,6 +1,6 @@
 {
   "name": "http-status-toast",
-  "version": "1.1.7",
+  "version": "1.1.9",
   "description": "A simple toast notification according to your http req response!",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -14,11 +14,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c &&  mv -f dist/esm/types/components dist/esm/components"
+    "build": "rollup -c && mv -f dist/esm/types/components dist/esm/components && mv -f dist/cjs/types/components dist/cjs/components"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ninamarq/http-status-toast.git"
+    "url": "git+https:/github.com/ninamarq/http-status-toast.git"
   },
   "keywords": [
     "status-toast"
@@ -26,9 +26,9 @@
   "author": "Marina Marques - ninamarq",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ninamarq/http-status-toast/issues"
+    "url": "https:/github.com/ninamarq/http-status-toast/issues"
   },
-  "homepage": "https://github.com/ninamarq/http-status-toast#readme",
+  "homepage": "https:/github.com/ninamarq/http-status-toast#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
