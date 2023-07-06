@@ -1,6 +1,4 @@
-import { IThemeProps, TTheme } from './theme.type';
-import { IStatusCode, TStatusCode, EStatusTheme } from './statusCode.type';
+export * from './theme.type';
+export * from './statusCode.type';
 
-type TLang = 'pt' | 'es' | 'en'
-
-export { IThemeProps, TTheme, IStatusCode, TStatusCode, EStatusTheme, TLang };
+export type TLang = 'pt' | 'es' | 'en'
