@@ -1,5 +1,5 @@
 export interface IThemeProps {
-  theme: TTheme
+  theme: { [key: string]: string } | TTheme
 }
 
-export type TTheme = 'success' | 'client_error' | 'server_error'
+export type TTheme = 'success' | 'client_error' | 'server_error';

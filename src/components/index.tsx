@@ -1,3 +1,9 @@
+import React from 'react';
 export { Toast } from './Toast';
-export { Header } from './Header';
-export { ToastMessage } from './ToastMessage';
+import { IToastProps, Toast } from './Toast';
+
+const httpStatusToast = (props: IToastProps) => {
+	return <Toast {...props} />;
+};
+
+export default httpStatusToast;
