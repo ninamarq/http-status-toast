@@ -12,10 +12,10 @@ const PropsStyle = (style: Interpolation<object>): RuleSet<object> => css`
   ${style}
 `;
 
-const ToastContainer = styled.div<IToastProps>`
+const ToastContainer: React.FC<IToastProps> = styled.div<IToastProps>`
   display: ${(props) => props.display ? 'flex' : 'none'};
   box-sizing: border-box;
-  background: ${props => ToastContainer.defaultProps.theme[props.theme]};
+  background: ${props => ToastContainer.defaultProps?.theme?.[props.theme]};
   border-radius: 6px;
   flex-direction: column;
   font-family: Fira code;
@@ -35,13 +35,22 @@ const ToastContainer = styled.div<IToastProps>`
   ${(props) => PropsStyle(props.style) as unknown as string};
 `;
 
+interface ITheme {
+  success: string;
+  client_error: string;
+  server_error: string;
+  unknown: string;
+}
+
+const defaultTheme: ITheme & { [key: string]: string; } = {
+	success: '#7FB069',
+	client_error: '#FF3C38',
+	server_error: '#FF8C42',
+	unknown: '#76949F'
+};
+
 ToastContainer.defaultProps = {
-	theme: {
-		success: '#7FB069',
-		client_error: '#FF3C38',
-		server_error: '#FF8C42',
-		unknown: '#76949F'
-	}
+	theme: defaultTheme
 };
 
 export const styles = { ToastContainer };

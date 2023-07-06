@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from 'react';
 import { styles as s } from './styles';
 import { getThemeByStatusCode } from '../../utils';
-import { EStatusTheme, TLang } from '../../types';
-import { Header, ToastMessage } from '../';
+import { EStatusTheme, TLang, TTheme } from '../../types';
+import { Header } from '../Header';
+import { ToastMessage } from '../ToastMessage';
+import { Interpolation } from 'styled-components/dist/types';
 
 export interface IToastProps {
 	status: string | number
@@ -27,10 +29,10 @@ export const Toast = (props: IToastProps) => {
 
 	return (
 		<s.ToastContainer
-			theme={toastTheme}
+			theme={toastTheme as TTheme}
 			position={props.position || 'right'}
 			display={displayToast}
-			style={props.customStyle}
+			style={props.customStyle as Interpolation<object>}
 		>
 			<Header
 				currentTheme={toastTheme}

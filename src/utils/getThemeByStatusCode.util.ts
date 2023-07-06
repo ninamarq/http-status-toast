@@ -14,7 +14,7 @@ const getThemeByStatusCode = (status: string | number): EStatusTheme => {
 		[499, EStatusTheme.CLIENT_ERROR],
 		[500, EStatusTheme.SERVER_ERROR],
 		[502, EStatusTheme.SERVER_ERROR],
-		[504, EStatusTheme.SERVER_ERROR]
+		[504, EStatusTheme.SERVER_ERROR],
 	]);
 
 	const statusString = String(status);
@@ -23,7 +23,7 @@ const getThemeByStatusCode = (status: string | number): EStatusTheme => {
 			return theme;
 		}
 	}
-	
+
 	return EStatusTheme.UNKNOWN;
 };
 
