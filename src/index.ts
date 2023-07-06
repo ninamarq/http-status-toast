@@ -1,3 +1,1 @@
-import httpStatusToast from './components';
-
-export default httpStatusToast;
+export { Toast as httpStatusToast } from './components';
