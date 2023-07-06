@@ -2,10 +2,9 @@ import React, { useMemo, useState } from 'react';
 import { styles as s } from './styles';
 import { getThemeByStatusCode } from '../../utils';
 import { EStatusTheme, TLang } from '../../types';
-import { Header } from '../Header';
-import { ToastMessage } from '../ToastMessage';
+import { Header, ToastMessage } from '../';
 
-interface IToastProps {
+export interface IToastProps {
 	status: string | number
 	lang: TLang
 	position?: 'right' | 'left'
