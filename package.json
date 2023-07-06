@@ -1,6 +1,6 @@
 {
   "name": "http-status-toast",
-  "version": "1.1.4",
+  "version": "1.1.7",
   "description": "A simple toast notification according to your http req response!",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -8,13 +8,13 @@
   "typings": "dist/index.d.ts",
   "files": ["dist"],
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/components/index.ts"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c"
+    "build": "rollup -c &&  mv -f dist/esm/types/components dist/esm/components"
   },
   "repository": {
     "type": "git",

@@ -16,7 +16,7 @@ export default [
 				file: packageJson.main,
 				format: 'cjs',
 				sourcemap: true,
-				name: 'react-ts-lib'
+				name: 'http-status-toast'
 			},
 			{
 				file: packageJson.module,
@@ -26,11 +26,13 @@ export default [
 		],
 		plugins: [
 			external(),
-			resolve(),
+			resolve({
+				browser: true,
+			}),
 			commonjs(),
 			typescript({ tsconfig: './tsconfig.json' }),
 			postcss(),
-			terser()
+			terser(),
 		],
 	},
 	{
@@ -38,5 +40,5 @@ export default [
 		output: [{ file: 'dist/index.d.ts', format: 'esm' }],
 		external: [/\.css$/],
 		plugins: [dts()],
-	},
+	}
 ];
