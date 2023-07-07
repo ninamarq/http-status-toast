@@ -1,34 +1,51 @@
 {
   "name": "http-status-toast",
-  "version": "1.1.9",
+  "version": "1.2.7",
   "description": "A simple toast notification according to your http req response!",
+  "source": "src/index.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "type": "module",
   "typings": "dist/index.d.ts",
-  "files": ["dist"],
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": "./src/components/index.ts"
   },
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c && mv -f dist/esm/types/components dist/esm/components && mv -f dist/cjs/types/components dist/cjs/components"
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
-    "url": "git+https:/github.com/ninamarq/http-status-toast.git"
+    "url": "git+https://github.com/ninamarq/http-status-toast.git"
   },
   "keywords": [
-    "status-toast"
+    "status-toast",
+    "http",
+    "status",
+    "toast",
+    "alert",
+    "general",
+    "notification"
   ],
   "author": "Marina Marques - ninamarq",
   "license": "MIT",
   "bugs": {
-    "url": "https:/github.com/ninamarq/http-status-toast/issues"
+    "url": "https://github.com/ninamarq/http-status-toast/issues"
   },
-  "homepage": "https:/github.com/ninamarq/http-status-toast#readme",
+  "homepage": "https://github.com/ninamarq/http-status-toast#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
@@ -44,6 +61,7 @@
     "@storybook/react": "^7.0.23",
     "@storybook/react-webpack5": "^7.0.23",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/aria-query": "^5.0.1",
     "@types/react": "^18.2.14",
     "@types/storybook__react": "^5.2.1",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
@@ -69,8 +87,10 @@
     "typescript-eslint": "^0.0.1-alpha.0"
   },
   "dependencies": {
+    "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "styled-components": "^6.0.0-rc.6",
-    "typescript-eslint": "^0.0.1-alpha.0"
+    "typescript-eslint": "^0.0.1-alpha.0",
+    "webpack": "^5.88.1"
   }
 }
