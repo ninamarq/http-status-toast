@@ -1,6 +1,6 @@
 {
   "name": "http-status-toast",
-  "version": "1.2.7",
+  "version": "1.3.0",
   "description": "A simple toast notification according to your http req response!",
   "source": "src/index.ts",
   "main": "dist/cjs/index.js",
@@ -11,7 +11,11 @@
     "dist"
   ],
   "exports": {
-    ".": "./src/components/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/cjs/index.ts",
+      "import": "./dist/esm/index.ts"
+    }
   },
   "moduleFileExtensions": [
     "ts",
@@ -88,7 +92,6 @@
   },
   "dependencies": {
     "react-dom": "^18.2.0",
-    "react-icons": "^4.10.1",
     "styled-components": "^6.0.0-rc.6",
     "typescript-eslint": "^0.0.1-alpha.0",
     "webpack": "^5.88.1"

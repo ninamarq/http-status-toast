@@ -1,19 +1,26 @@
 {
+  "include": ["src", "types"],
   "compilerOptions": {
-    "target": "es5",
     "module": "ESNext",
-    "jsx": "react",
-    "rootDir": "src",
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
+    "declaration": true,
     "sourceMap": true,
+    "rootDir": "src",
     "outDir": "dist",
     "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "downlevelIteration": true,
-    "declaration": true,
-    "emitDeclarationOnly": true
+    "jsx": "react",
+    "esModuleInterop": true
   }
 }
