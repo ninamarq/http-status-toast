@@ -14,8 +14,8 @@ export const Header = (props: IHeaderProps) => {
 	return (
 		<s.ToastHeader>
 			{getThemeIcon(props.currentTheme, props.currentLang)}
-			<s.CloseButton>
-				<IoClose onClick={() => props.handleDisplayToast(false)}/>
+			<s.CloseButton onClick={() => props.handleDisplayToast(false)}>
+				<IoClose />
 			</s.CloseButton>
 		</s.ToastHeader>
 	);
