@@ -38,7 +38,7 @@ export type StatusCodes = SuccessStatusCode &
   ServerErrorStatusCode;
 
 export type StatusTranslations = {
-  [key in TStatusCode]: {
-    [key in TLang]: string;
+  [status in TStatusCode]: {
+    [lang in TLang]: string;
   };
 };
