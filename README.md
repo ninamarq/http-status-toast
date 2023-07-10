@@ -40,8 +40,7 @@ For use in the simplest way:
 ```bash
 fetch(URL)
     .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast(response.status, 'en'))
+    .catch((error) => httpStatusToast(response.status, 'en'))
 ```
 
 Above we have a simple call of the lib function, that will call a notification with a simple message and a simple toast with its theme according to the status passed by params.
@@ -85,64 +84,59 @@ Examples of uses:
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'en',
         customStyle: { "font-family": "Times new Roman", "color": "red" }
     }))
+    .catch((error) => console.error(error))
 ```
 
 - Position
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'en',
         position: "left"
     }))
+    .catch((error) => console.error(error))
 ```
 
 - Language
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'pt'
     }))
+    .catch((error) => console.error(error))
 ```
 
 - Duration
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'pt',
         duration: 6000, // 6 seconds
     }))
+    .catch((error) => console.error(error))
 ```
 
 - Message
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'en',
         message: response.data.message || "Try again in 10 minutes",
     }))
+    .catch((error) => console.error(error))
 ```
 And that's it! ❤️
 <hr/>

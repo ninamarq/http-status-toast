@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: default;
+}
+
+.close-button {
+  cursor: pointer;
+}
+
+.close-button:hover {
+  transition: .5s;
+  opacity: 70%;
+};

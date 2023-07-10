@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { styles as s } from './styles';
+import './index.css';
 import { getMessagesByTheme } from '../../utils';
 import { EStatusTheme, TLang } from '../../types';
 
@@ -19,8 +19,8 @@ export const ToastMessage = (props: IToastMessageProps) => {
 	}, [props.currentTheme, props.currentMessage, props.currentLang]);
 
 	return (
-		<s.MessageContainer>
+		<section className='message_container'>
 			{messageToRender()}
-		</s.MessageContainer>
+		</section>
 	);
 };

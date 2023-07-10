@@ -1,0 +1,6 @@
+.message_container {
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  padding: 12px 4px;
+}
