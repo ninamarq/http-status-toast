@@ -1,4 +1,4 @@
-export * from './theme.type';
-export * from './statusCode.type';
+export * from "./statusCode.type";
+export * from "./theme.type";
 
-export type TLang = 'pt' | 'es' | 'en'
+export type TLang = "pt" | "es" | "en";
