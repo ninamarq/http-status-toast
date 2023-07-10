@@ -3,6 +3,8 @@
 
 Introducing a straightforward and practical library designed to assist developers in effectively notifying users about the status of their requests. 😁
 
+## DRAFT LIB
+
 ## Description
 
 This library offers a simple, concise, and versatile solution, making it easier than ever for developers to communicate essential information to users. With its user-friendly approach, it simplifies the process of conveying the current state of requests, ensuring a seamless user experience. Whether you need to provide updates, alerts, or general notifications, this library has got you covered, enabling you to streamline your development process while delivering clear and informative messages to your users.
