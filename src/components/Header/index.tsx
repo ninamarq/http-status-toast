@@ -1,22 +1,22 @@
 import React from 'react';
-import { styles as s } from './styles';
 import { getThemeIcon } from '../../utils';
 import { EStatusTheme, TLang } from '../../types';
-import { IoClose } from 'react-icons/io5';
+import { AiOutlineClose } from 'react-icons/ai';
+import './index.css'
 
 interface IHeaderProps {
 	currentTheme: EStatusTheme
   currentLang: TLang
-  handleDisplayToast: (value: boolean) => void
+  handleDisplayToast: (value: string) => void
 }
 
 export const Header = (props: IHeaderProps) => {
 	return (
-		<s.ToastHeader>
+		<header className='header'>
 			{getThemeIcon(props.currentTheme, props.currentLang)}
-			<s.CloseButton>
-				<IoClose onClick={() => props.handleDisplayToast(false)}/>
-			</s.CloseButton>
-		</s.ToastHeader>
+			<div className='close-button'>
+				<AiOutlineClose onClick={() => props.handleDisplayToast("false")}/>
+			</div>
+		</header>
 	);
 };

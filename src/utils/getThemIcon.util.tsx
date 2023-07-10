@@ -4,8 +4,8 @@ import { BiSolidErrorAlt } from 'react-icons/bi';
 import { LuServerOff } from 'react-icons/lu';
 import { MdSmsFailed } from 'react-icons/md';
 import { EStatusTheme, TLang } from '../types';
-import { styled } from 'styled-components';
 import getToastTitleByTheme from './getToastTitleByTheme.util';
+import "./index.css"
 
 const getThemeIcon = (theme: EStatusTheme, lang?: TLang) => {
 	const themeIcons = {
@@ -15,18 +15,11 @@ const getThemeIcon = (theme: EStatusTheme, lang?: TLang) => {
 		unknown: <MdSmsFailed />
 	};
 
-	const ThemeIconContainer = styled.div`
-		display: flex;
-		gap: 16px;
-		justify-content: flex-start;
-		align-items: center;
-	`;
-
 	return (
-		<ThemeIconContainer>
+		<div className='theme_icon'>
 			{themeIcons[theme]}
 			{getToastTitleByTheme(theme, lang)}
-		</ThemeIconContainer>
+		</div>
 	);
 };
 

@@ -1,0 +1,47 @@
+.toast_container {
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 6px;
+  flex-direction: column;
+  font-family: Fira code;
+  font-size: 12px;
+  color: #F0EFFB;
+  padding: 8px;
+  z-index: 3;
+  -webkit-transform: translate3d(0, 0, 3);
+  position: fixed;
+  top: 5%;
+  width: 30%;
+  min-width: 150px;
+  max-width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  transition: .5s;
+}
+
+.hide_toast {
+  display: none;
+}
+
+#right {
+  right: 3.5%;
+}
+
+#left {
+  left: 3.5%;
+}
+
+.bg_success {
+  background-color: #7FB069;
+}
+
+.bg_client_error {
+  background-color: #FF3C38;
+}
+
+.bg_server_error {
+  background-color: #FF8C42;
+}
+
+.bg_unknown {
+  background-color: #76949F;
+}

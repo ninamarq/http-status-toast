@@ -3,6 +3,8 @@
 
 Introducing a straightforward and practical library designed to assist developers in effectively notifying users about the status of their requests. 😁
 
+## DRAFT LIB
+
 ## Description
 
 This library offers a simple, concise, and versatile solution, making it easier than ever for developers to communicate essential information to users. With its user-friendly approach, it simplifies the process of conveying the current state of requests, ensuring a seamless user experience. Whether you need to provide updates, alerts, or general notifications, this library has got you covered, enabling you to streamline your development process while delivering clear and informative messages to your users.
@@ -40,8 +42,7 @@ For use in the simplest way:
 ```bash
 fetch(URL)
     .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast(response.status, 'en'))
+    .catch((error) => httpStatusToast(response.status, 'en'))
 ```
 
 Above we have a simple call of the lib function, that will call a notification with a simple message and a simple toast with its theme according to the status passed by params.
@@ -85,64 +86,59 @@ Examples of uses:
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'en',
         customStyle: { "font-family": "Times new Roman", "color": "red" }
     }))
+    .catch((error) => console.error(error))
 ```
 
 - Position
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'en',
         position: "left"
     }))
+    .catch((error) => console.error(error))
 ```
 
 - Language
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'pt'
     }))
+    .catch((error) => console.error(error))
 ```
 
 - Duration
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'pt',
         duration: 6000, // 6 seconds
     }))
+    .catch((error) => console.error(error))
 ```
 
 - Message
 
 ```bash
 fetch(URL)
-    .then((response) => setData(response.data))
-    .catch((error) => console.error(error))
-    .finally((response) => httpStatusToast({
+    .then((response) => httpStatusToast({
         status: response.status,
         lang: 'en',
         message: response.data.message || "Try again in 10 minutes",
     }))
+    .catch((error) => console.error(error))
 ```
 And that's it! ❤️
 <hr/>

@@ -1,0 +1,6 @@
+.theme_icon {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  align-items: center;
+}
