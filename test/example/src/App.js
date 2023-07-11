@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Toast as httpStatusToast } from "../../../src/components/Toast";
+import { AiFillAlert } from "react-icons/ai";
 
 function App() {
   const [data, setData] = useState([]);
@@ -9,9 +10,14 @@ function App() {
         const todos = await response.json();
         setData(todos);
         httpStatusToast({
-          status: 500,
+          status: response.status,
           lang: "pt",
-          duration: 90000,
+          duration: 5000,
+          // customHeader: (
+          //   <h2>
+          //     ss <AiFillAlert />
+          //   </h2>
+          // ),
           // position: "left"
         });
       })

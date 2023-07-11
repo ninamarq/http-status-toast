@@ -4,7 +4,7 @@ import { getMessagesByTheme } from '../../utils';
 import { EStatusTheme, TLang } from '../../types';
 
 interface IToastMessageProps {
-  currentMessage?: string
+  currentMessage?: string | React.ReactNode
   currentTheme: EStatusTheme
   currentLang: TLang
 }
