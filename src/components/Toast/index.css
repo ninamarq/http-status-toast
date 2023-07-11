@@ -4,7 +4,7 @@
   border-radius: 6px;
   flex-direction: column;
   font-family: Fira code;
-  font-size: 12px;
+  font-size: 14px;
   color: #F0EFFB;
   padding: 8px;
   z-index: 3;
@@ -16,6 +16,7 @@
   max-width: 500px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   transition: .5s;
+  overflow: hidden;
 }
 
 .hide_toast {
@@ -23,11 +24,13 @@
 }
 
 #right {
-  right: 3.5%;
+  right: 4%;
+  animation: toasting-right 2s normal;
 }
 
 #left {
-  left: 3.5%;
+  left: 4%;
+  animation: toasting-left 2s normal;
 }
 
 .bg_success {
@@ -44,4 +47,51 @@
 
 .bg_unknown {
   background-color: #76949F;
+}
+
+.progress{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+}
+
+.progress::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ddd;
+}
+
+@keyframes progress {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes toasting-right {
+  from {
+    transform: translate3d(110%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes toasting-left {
+  from {
+    transform: translate3d(-110%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }

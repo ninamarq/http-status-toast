@@ -6,6 +6,10 @@
   cursor: default;
 }
 
+.header svg {
+  font-size: 20px;
+}
+
 .close-button {
   cursor: pointer;
 }

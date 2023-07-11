@@ -50,6 +50,12 @@ export const Toast = (props: IToastProps) => {
 						currentTheme={toastTheme}
 						currentLang={props.lang}
 					/>
+					<div
+						className="progress active"
+						style={{
+							animation: `progress linear ${props.duration || 7000}ms forwards`,
+						}}
+					></div>
 				</div>
 			)
 	}

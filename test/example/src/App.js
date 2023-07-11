@@ -11,6 +11,7 @@ function App() {
         httpStatusToast({
           status: 200,
           lang: "pt",
+          // position: "left"
         });
       })
       .catch((error) => console.error(error));
