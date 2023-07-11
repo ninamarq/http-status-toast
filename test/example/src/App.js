@@ -9,8 +9,9 @@ function App() {
         const todos = await response.json();
         setData(todos);
         httpStatusToast({
-          status: 200,
+          status: 500,
           lang: "pt",
+          duration: 90000,
           // position: "left"
         });
       })
@@ -20,8 +21,6 @@ function App() {
   useEffect(() => {
     makeRequest();
   }, []);
-
-  console.log(data);
 
   return (
     <div className="App">
