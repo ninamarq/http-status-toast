@@ -10,8 +10,8 @@ function App() {
         const todos = await response.json();
         setData(todos);
         httpStatusToast({
-          status: 500,
-          lang: "pt",
+          status: 5200,
+          lang: "en",
           duration: 5000,
           // customHeader: (
           //   <h2>

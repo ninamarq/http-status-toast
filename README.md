@@ -3,7 +3,9 @@
 
 Introducing a straightforward and practical library designed to assist developers in effectively notifying users about the status of their requests. 😁
 
-## DRAFT LIB
+### ✨ Release 🚀 Check on [releases on source repository!](https://github.com/ninamarq/http-status-toast/releases) ✨
+
+<img src="./src/assets/release_gif.gif" width="600px" />
 
 ## Description
 
@@ -53,19 +55,19 @@ Here we will have some examples of the simplest use of this function, passing ju
 
 - When the status passed it fits successfull request:
 
-<img src="src/assets/success_status.png" width="500px" />
+<img width="500px" src="./src/assets/success_status.png" />
 
 - When the status passed it fits client error request:
 
-<img src="src/assets/client_error_status.png" width="500px" />
+<img width="500px" src="./src/assets/client_error.png" />
 
 - When the status passed it fits server error request:
 
-<img src="src/assets/server_error_status.png" width="500px" />
+<img width="500px" src="./src/assets/server_error.png" />
 
 - When the status passed it fits unknown type of request:
 
-<img src="src/assets/unknown_status.png" width="500px" />
+<img width="500px" src="./src/assets/unknown_status.png" />
 
 But if you want to customize more and more, we have some optionals uses for this function.
 
@@ -74,11 +76,12 @@ You can costume:
 - Horizontal position by `position` params, passing "right" or "left" values
 - Language by `lang` params, for now we have just for portuguese ("pt"), spanish ("es") and english ("en")
 - Toast duration by `duration` params, passing milisseconds value
-- Custom message by `message` params, passing a string
+- Custom message by `message` params, passing a string or a React Node
+- Custom header by `customHeader` params, passing a string or a React Node
 
 ## Storybook controls visualization
 
-<img src="src/assets/storybook_controls_params.png" />
+<img width="500px" src="./src/assets/storybook_control_params.png" />
 
 Examples of uses:
 
@@ -136,10 +139,23 @@ fetch(URL)
     .then((response) => httpStatusToast({
         status: response.status,
         lang: 'en',
-        message: response.data.message || "Try again in 10 minutes",
+        message: response.data.message || <div>Lorem ipsum <SomeIcon /></div>,
     }))
     .catch((error) => console.error(error))
 ```
+
+- Custom header
+
+```bash
+fetch(URL)
+    .then((response) => httpStatusToast({
+        status: response.status,
+        lang: 'en',
+        customHeader: "Lorem ipsum" || <div>Lorem ipsum <SomeIcon /></div>,
+    }))
+    .catch((error) => console.error(error))
+```
+
 And that's it! ❤️
 <hr/>
 
