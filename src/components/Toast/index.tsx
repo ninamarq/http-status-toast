@@ -12,7 +12,8 @@ export interface IToastProps {
 	lang: TLang
 	position?: 'right' | 'left'
 	duration?: string | number
-	message?: string
+	message?: string | React.ReactNode
+	customHeader?: string | React.ReactNode
 	customStyle?: React.CSSProperties
 }
 
@@ -43,6 +44,7 @@ export const Toast = (props: IToastProps) => {
 					<Header
 						currentTheme={toastTheme}
 						currentLang={props.lang}
+						currentHeader={props.customHeader}
 						handleDisplayToast={setDisplayToast}
 					/>
 					<ToastMessage
@@ -50,6 +52,12 @@ export const Toast = (props: IToastProps) => {
 						currentTheme={toastTheme}
 						currentLang={props.lang}
 					/>
+					<div
+						className="timer active"
+						style={{
+							animation: `timer linear ${props.duration || 7000}ms forwards`,
+						}}
+					></div>
 				</div>
 			)
 	}

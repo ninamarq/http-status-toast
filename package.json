@@ -1,6 +1,6 @@
 {
   "name": "http-status-toast",
-  "version": "1.4.8",
+  "version": "1.5.0",
   "description": "A simple toast notification according to your http req response!",
   "source": "src/index.d.cts",
   "main": "dist/index.cjs",

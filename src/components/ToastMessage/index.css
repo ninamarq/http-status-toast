@@ -1,6 +1,9 @@
 .message_container {
   display: flex;
   flex-wrap: nowrap;
+  word-break: break-word;
+  text-align: justify;
+  width: 100%;
   box-sizing: border-box;
-  padding: 12px 4px;
+  padding: 8px 4px;
 }

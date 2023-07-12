@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import App from '../../test/example/src/App.js'
+// import { App } from '../../src';
 
 const meta: Meta<typeof App> = {
 	component: App,
@@ -14,8 +15,9 @@ export const Primary: Story = {
 		status: '204',
 		position: 'right',
 		duration: '5000',
-		message: '',
+		message: {},
 		lang: 'pt',
-		customStyle: {}
+		customStyle: {},
+		customHeader: {}
 	},
 };
