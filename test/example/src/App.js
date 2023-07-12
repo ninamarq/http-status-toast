@@ -10,7 +10,7 @@ function App() {
         const todos = await response.json();
         setData(todos);
         httpStatusToast({
-          status: response.status,
+          status: 500,
           lang: "pt",
           duration: 5000,
           // customHeader: (
@@ -21,7 +21,19 @@ function App() {
           // position: "left"
         });
       })
-      .catch((error) => console.error(error));
+      .catch((error) =>
+        httpStatusToast({
+          status: error.status,
+          lang: "pt",
+          duration: 5000,
+          // customHeader: (
+          //   <h2>
+          //     ss <AiFillAlert />
+          //   </h2>
+          // ),
+          // position: "left"
+        })
+      );
   };
 
   useEffect(() => {
