@@ -15,7 +15,7 @@ const getThemeByStatusCode = (status: string | number): EStatusTheme => {
     [500, EStatusTheme.SERVER_ERROR],
     [502, EStatusTheme.SERVER_ERROR],
     [504, EStatusTheme.SERVER_ERROR],
-  ]);
+  ] as Array<[StatusCodes, EStatusTheme]>);
 
   const statusString = String(status);
 

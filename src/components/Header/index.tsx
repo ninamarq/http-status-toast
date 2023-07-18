@@ -17,18 +17,14 @@ export const Header = (props: IHeaderProps) => {
 			return props.currentHeader
 		}
 
-		return (
-			<>
-				{getThemeIcon(props.currentTheme, props.currentLang)}
-				<div className='close-button'>
-					<AiOutlineClose onClick={() => props.handleDisplayToast("false")}/>
-				</div>
-			</>
-		);
+		return getThemeIcon(props.currentTheme, props.currentLang)
 	}, [props.currentHeader, props.currentLang, props.currentTheme])
 	
 	return (
 		<header className='header'>
+			<div className='close-button'>
+				<AiOutlineClose onClick={() => props.handleDisplayToast("false")}/>
+			</div>
 			{handleHeader()}
 		</header>
 	);
