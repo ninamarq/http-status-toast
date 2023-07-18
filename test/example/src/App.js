@@ -10,14 +10,9 @@ function App() {
         const todos = await response.json();
         setData(todos);
         httpStatusToast({
-          status: 5200,
+          status: 500,
           lang: "en",
           duration: 5000,
-          // customHeader: (
-          //   <h2>
-          //     ss <AiFillAlert />
-          //   </h2>
-          // ),
           // position: "left"
         });
       })
